@@ -1,0 +1,134 @@
+.google-sans-basic {
+  font-family: "Google Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  font-variation-settings:
+    "GRAD" 0;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: #f1f1f5;
+
+  background: linear-gradient(
+    135deg,
+    #0f172a,   /* deep navy */
+    #111827,   /* slate */
+    #020617    /* near black */
+  );
+  height: 100vh;
+  overflow: hidden;
+}
+
+#bgVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* pitää kuvasuhteen oikeana */
+  z-index: -1; /* taustalle */
+  filter: brightness(0.4); /* tummentaa hieman */
+}
+
+#settingsBtn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+#settingsBtn:hover {
+  opacity: 1;
+}
+
+#settings {
+  display: none;
+  margin-bottom: 8px;
+}
+
+#settings.open {
+  display: block;
+}
+#settingsBtn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: clamp(0.4rem, 2vh, 0.6rem);
+    aspect-ratio: 1 / 1;
+    display: block;
+    background: #ffffffd4;
+    border-radius: 100%;
+    box-shadow: 0px 0px 5px #FFF;
+    animation: pulseBg 1s infinite ease-in-out;
+}
+
+section#result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+.temperature {
+    font-size: clamp(2rem, 20vh, 15rem);
+    text-align: center;
+    color: #e5e5e5d1;
+    text-shadow: 0px 0px 5px #ffffff36;
+    width: 60vh;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #3131312e;
+    border-radius: 60vh;
+    box-shadow: 3px 5px 4px 0px #ffffff38 inset;
+    padding: 12vh;
+    animation: pulseShadow 5s infinite ease-in-out;
+}
+#bgVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(1) opacity(0.2);
+}
+
+
+
+
+
+@keyframes pulseBg {
+  0% {
+    background-color: #ffffff4b; /* täysin läpinäkyvä */
+  }
+  50% {
+    background-color: #ffffffd4; /* lähes valkoinen */
+  }
+  100% {
+    background-color: #ffffff4b; /* takaisin läpinäkyvä */
+  }
+}
+@keyframes pulseShadow {
+  0% {
+    box-shadow: 3px 5px 2px 0px #ffffff38 inset;
+  }
+  50% {
+    box-shadow: 4px 6px 6px 0px #ffffff53 inset;
+  }
+  100% {
+    box-shadow: 3px 5px 2px 0px #ffffff38 inset;
+  }
+}
