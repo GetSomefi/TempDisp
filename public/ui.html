@@ -19,6 +19,7 @@
     <label for="place">Paikkakunta:</label>
     <input id="place" value="Pori" />
     <button onclick="getWeather()">Päivitä</button>
+    <button onclick="hideVideo()">Pysäytä video</button>
   </div>
 
   <button id="settingsBtn">⚙️</button>
@@ -32,6 +33,12 @@
   settingsBtn.addEventListener("click", () => {
     settings.classList.toggle("open");
   });
+  
+  function hideVideo() {
+    const video = document.getElementById("bgVideo");
+    video.pause();
+    video.currentTime = 0;
+  }
 
   function formatTime(isoString) {
     const date = new Date(isoString);
@@ -68,7 +75,7 @@
       </div>
     `;
   }
-  setInterval(getWeather, 600000); // Päivitä sää minuutin välein
+  setInterval(getWeather, 60000); // Päivitä sää minuutin välein
   getWeather(); // Hae sää heti sivun latautuessa
 
   // Käynnistä ping-pong
