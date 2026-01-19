@@ -80,7 +80,7 @@ section#result {
 }
 
 .temperature {
-    font-size: clamp(2rem, 20vh, 15rem);
+    font-size: clamp(2rem, 16vh, 3rem);
     text-align: center;
     color: #e5e5e5d1;
     text-shadow: 0px 0px 5px #ffffff36;
